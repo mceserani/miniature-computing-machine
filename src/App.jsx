@@ -14,8 +14,20 @@ function FilterableProductTable() {
 
   return (
     <div class="FilterableProductTable">
-      
+      <SearchBar />
       <ProductTable prodotti={prodotti} />
+    </div>
+  )
+}
+
+function SearchBar() {
+  return (
+    <div class="SearchBar">
+      <input type="text" id="search" placeholder="Search..." />
+      <label>
+        <input type="checkbox" id="instock"/>
+        Only show products in stock
+      </label>
     </div>
   )
 }
