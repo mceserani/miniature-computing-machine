@@ -33,6 +33,11 @@ function SearchBar() {
 }
 
 function ProductRow({ nome, prezzo, stock }) {
+
+  if (stock === false) {
+    nome = <span class="out_of_stock">{ nome }</span>
+  }
+
   return (
     <div class="ProductRow">
       <span class="Name">{ nome }</span>
@@ -54,11 +59,11 @@ function ProductTable({ prodotti }) {
 
   righe.push(<ProductCategoryRow categoria="Fruits" />);
   let fruits = prodotti.filter(p => p.category === "Fruits");
-  fruits.forEach(p => righe.push(<ProductRow nome={p.name} prezzo={p.price} />));
+  fruits.forEach(p => righe.push(<ProductRow nome={p.name} prezzo={p.price} stock={p.stocked} />));
 
   righe.push(<ProductCategoryRow categoria="Vegetables" />);
   let vegetables = prodotti.filter(p => p.category === "Vegetables");
-  vegetables.forEach(p => righe.push(<ProductRow nome={p.name} prezzo={p.price} />));
+  vegetables.forEach(p => righe.push(<ProductRow nome={p.name} prezzo={p.price} stock={p.stocked} />));
 
   return (
     <div class="ProductTable">
