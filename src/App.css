@@ -5,42 +5,73 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Applica un font sans-serif a tutto */
+body {
+  font-family: sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Sfondo leggermente grigio per ridurre il contrasto */
+.FilterableProductTable, .SearchBar, .ProductTable {
+  background-color: #f7f7f7;
+  color: #333; /* Testo scuro ma non nero puro */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Stile della barra di ricerca */
+.SearchBar input[type="text"] {
+  padding: 8px;
+  margin-bottom: 8px; /* Spazio tra casella di testo e checkbox */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.card {
-  padding: 2em;
+.SearchBar label {
+  display: block; /* Mette la checkbox sotto la casella di testo */
+  margin: 8px 0;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
+/* Stile dei prodotti non in stock */
 .out_of_stock {
-  color: red;
+  color: #d14343; /* Rosso scuro, meno intenso */
+}
+
+/* Intestazioni della tabella con allineamento */
+.ProductTableHeader, .ProductRow, .ProductCategoryRow {
+  display: flex;
+  justify-content: space-between; /* Assicura che Nome e Prezzo siano agli estremi */
+  padding: 10px 0;
+}
+
+/* Allinea Nome e Prezzo nella testata e nelle righe, con padding */
+.Name_h, .Price_h, .Name, .Price {
+  flex: 1; /* Assegna uguale spazio ma permette l'allineamento */
+  text-align: left; /* Allinea il nome a sinistra */
+  padding-left: 20px; /* Padding a sinistra per i nomi */
+}
+
+.Price_h, .Price {
+  text-align: right; /* Allinea il prezzo a destra */
+  padding-right: 20px; /* Padding a destra per i prezzi */
+}
+
+/* Stile per le intestazioni della tabella */
+.ProductTableHeader {
+  background-color: #e9ecef; /* Sfondo chiaro per le intestazioni */
+  font-weight: bold;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Alternare i colori di sfondo delle righe della tabella */
+.ProductRow:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.ProductRow:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+/* Centra il testo delle categorie */
+.ProductCategoryRow {
+  justify-content: center; /* Centra le categorie */
+  font-weight: bold;
+  background-color: #ddd; /* Distingue le righe di categoria */
 }
